@@ -3,6 +3,8 @@ __pycache__/
 .env
 .venv/
 .venv-1/
+.venv*/
+**/.venv*/
 uploads/
 Garbage classification/
 ML_Project_ISE.ipynb

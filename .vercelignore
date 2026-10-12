@@ -2,8 +2,10 @@
 .gitignore
 .venv
 .venv-1
+.venv*/
 **/.venv/**
 **/.venv-1/**
+**/.venv*/**
 __pycache__
 *.pyc
 .env
