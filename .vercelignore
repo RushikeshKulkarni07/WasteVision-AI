@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv
+.venv-1
+__pycache__
+*.pyc
+.env
+.env.*
+uploads
+Garbage classification
+ML_Project_ISE.ipynb
+model/*.h5
+model/*.json
+*.db

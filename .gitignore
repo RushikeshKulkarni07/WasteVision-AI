@@ -2,7 +2,10 @@ __pycache__/
 *.pyc
 .env
 .venv/
+.venv-1/
 uploads/
+Garbage classification/
+ML_Project_ISE.ipynb
 model/*.h5
 model/*.json
 database/*.db
