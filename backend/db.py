@@ -1,8 +1,12 @@
 import os
 import sqlite3
 
-import mysql.connector
-from mysql.connector import Error
+try:
+    import mysql.connector
+    from mysql.connector import Error
+except ImportError:
+    mysql = None
+    Error = Exception
 
 from backend.config import Config
 
@@ -11,6 +15,9 @@ def create_database_if_not_exists():
     if Config.USE_SQLITE:
         os.makedirs(os.path.dirname(Config.DATABASE_PATH), exist_ok=True)
         return
+
+    if mysql is None:
+        raise RuntimeError("MySQL support is not installed. Set USE_SQLITE=true or install mysql-connector-python.")
 
     try:
         connection = mysql.connector.connect(
@@ -34,6 +41,9 @@ def connect_db():
         connection = sqlite3.connect(Config.DATABASE_PATH)
         connection.row_factory = sqlite3.Row
         return connection
+
+    if mysql is None:
+        raise RuntimeError("MySQL support is not installed. Set USE_SQLITE=true or install mysql-connector-python.")
 
     create_database_if_not_exists()
     connection = mysql.connector.connect(

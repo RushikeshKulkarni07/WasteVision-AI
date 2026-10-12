@@ -6,7 +6,5 @@ __pycache__/
 uploads/
 Garbage classification/
 ML_Project_ISE.ipynb
-model/*.h5
-model/*.json
 database/*.db
 .vercel/
